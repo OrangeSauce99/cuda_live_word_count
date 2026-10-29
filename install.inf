@@ -9,4 +9,3 @@ homepage=https://github.com/OrangeSauce99/live_word_count
 section=commands
 caption=Toggle Live Word Count
 method=toggle
-hotkey=Ctrl+Shift+W
