@@ -4,8 +4,7 @@ from cudax_lib import get_translation
 
 _ = get_translation(__file__)
 
-fn_config = os.path.join(app_path(APP_DIR_SETTINGS), 'cuda_word_count.ini')
-fn_config = os.path.join(app_path(APP_DIR_SETTINGS), 'cuda_word_count.ini')
+fn_config = os.path.join(app_path(APP_DIR_SETTINGS), 'live_word_count.ini')
 
 class Command:
     def __init__(self):
@@ -38,7 +37,7 @@ class Command:
             self._last = new
 
     def toggle(self):
-        if self._enabled:      # ← 8 spaces (one level inside the method)
+        if self._enabled: 
             self._enabled = False
             ed.set_prop(PROP_RULER_TEXT, "")
             ed.set_prop(PROP_RULER, False)
@@ -47,9 +46,4 @@ class Command:
             ed.set_prop(PROP_RULER, True)
             self._last = None
             self.update(ed)   
-
-
-
-
-
 
