@@ -1,9 +1,9 @@
 [info]
-title=Cuda Word Count
+title=Live Word Count
 desc=Shows word and character count in the bar above text.
 type=cudatext-plugin
-subdir=cuda_word_count
-homepage=https://github.com/OrangeSauce99/cuda_word_count
+subdir=live_word_count
+homepage=https://github.com/OrangeSauce99/live_word_count
 version=1.0.0
 
 [item1]
@@ -12,6 +12,6 @@ events=on_open,on_caret,on_change_slow
 
 [item2]
 section=commands
-caption=Toggle Cuda Word Count On/Off
+caption=Toggle Live Word Count
 method=toggle
 hotkey=Ctrl+Shift+W
