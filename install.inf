@@ -6,10 +6,6 @@ subdir=live_word_count
 homepage=https://github.com/OrangeSauce99/live_word_count
 version=1.0.0
 
-[item1]
-section=events
-events=on_open,on_caret,on_change_slow
-
 [item2]
 section=commands
 caption=Toggle Live Word Count
