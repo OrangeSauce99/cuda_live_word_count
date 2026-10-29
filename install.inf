@@ -1,0 +1,17 @@
+[info]
+title=Cuda Word Count
+desc=Shows word and character count in the bar above text.
+type=cudatext-plugin
+subdir=cuda_word_count
+homepage=https://github.com/OrangeSauce99/cuda_word_count
+version=1.0.0
+
+[item1]
+section=events
+events=on_open,on_caret,on_change_slow
+
+[item2]
+section=commands
+caption=Toggle Cuda Word Count On/Off
+method=toggle
+hotkey=Ctrl+Shift+W
