@@ -10,7 +10,7 @@ class Command:
             self._last = None
             self.update(ed)
 
-    def on_change_slow(self, ed):
+    def on_change(self, ed):
         if self._enabled:
             self.update(ed)
 
@@ -31,8 +31,8 @@ class Command:
         if self._enabled:
             self._last = None
             self.update(ed)
-            app_proc(PROC_EVENTS_SUB, 'cuda_live_word_count;on_change_slow,on_open;;')
+            app_proc(PROC_EVENTS_SUB, 'cuda_live_word_count;on_change,on_open;;')
         else:
             ed.set_prop(PROP_CORNER_TEXT, "")
-            app_proc(PROC_EVENTS_UNSUB, 'cuda_live_word_count;on_change_slow,on_open;;') 
+            app_proc(PROC_EVENTS_UNSUB, 'cuda_live_word_count;on_change,on_open;;') 
 
