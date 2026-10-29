@@ -26,7 +26,7 @@ class Command:
         text = '\n'.join(ed.get_text_line(i) for i in range(n))
         words = len(text.split())
         chars = len(text)
-        new = f"Words: {words}  |  Chars: {chars}"
+        new = f"Words: {words}  |  Characters: {chars}"
         if new != self._last:
             ed.set_prop(PROP_RULER_TEXT, new)
             self._last = new
@@ -42,4 +42,4 @@ class Command:
             ed.set_prop(PROP_RULER_TEXT, "")
             ed.set_prop(PROP_RULER, False)
             app_proc(PROC_EVENTS_UNSUB, 'live_word_count;on_change;;')
-            
+
