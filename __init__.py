@@ -10,15 +10,17 @@ class Command:
             self._last = None
             self.update(ed)
 
-    def on_change(self, ed):
+    def on_change_slow(self, ed):
         if self._enabled:
             self.update(ed)
 
     def update(self, ed):
-        n = ed.get_line_count()
-        text = '\n'.join(ed.get_text_line(i) for i in range(n))
-        words = len(text.split())
-        chars = len(text)
+        words = 0
+        chars = 0
+        for i in range(ed.get_line_count()):
+            line = ed.get_text_line(i)
+            words += len(line.split())
+            chars += len(line)
         new = f"Words: {words} | Characters: {chars}"
         if new != self._last:
             ed.set_prop(PROP_CORNER_TEXT, new)
@@ -29,10 +31,8 @@ class Command:
         if self._enabled:
             self._last = None
             self.update(ed)
-            app_proc(PROC_EVENTS_SUB, 'cuda_live_word_count;on_change;;')
-            app_proc(PROC_EVENTS_SUB, 'cuda_live_word_count;on_open;;')
+            app_proc(PROC_EVENTS_SUB, 'cuda_live_word_count;on_change_slow,on_open;;')
         else:
             ed.set_prop(PROP_CORNER_TEXT, "")
-            app_proc(PROC_EVENTS_UNSUB, 'cuda_live_word_count;on_change;;')
-            app_proc(PROC_EVENTS_UNSUB, 'cuda_live_word_count;on_open;;')
+            app_proc(PROC_EVENTS_UNSUB, 'cuda_live_word_count;on_change_slow,on_open;;') 
 
