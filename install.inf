@@ -4,7 +4,6 @@ desc=Shows word and character count in the bar above text.
 type=cudatext-plugin
 subdir=live_word_count
 homepage=https://github.com/OrangeSauce99/live_word_count
-version=1.0.0
 
 [item2]
 section=commands
