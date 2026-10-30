@@ -38,3 +38,4 @@ class Command:
         else:
             ed.set_prop(PROP_CORNER_TEXT, "")
             app_proc(PROC_EVENTS_UNSUB, 'cuda_live_word_count;on_change,on_open;;')
+
