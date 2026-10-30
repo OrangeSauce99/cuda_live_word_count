@@ -24,6 +24,9 @@ class Command:
         new = f"Words: {words} | Characters: {chars}"
         if new != self._last:
             ed.set_prop(PROP_CORNER_TEXT, new)
+            colors = app_proc(PROC_THEME_UI_DICT_GET, '')
+            ed.set_prop(PROP_CORNER_COLOR_FONT, colors['EdTextFont']['color'])
+            ed.set_prop(PROP_CORNER_COLOR_BACK, colors['EdTextBg']['color'])
             self._last = new
 
     def toggle(self):
@@ -34,5 +37,4 @@ class Command:
             app_proc(PROC_EVENTS_SUB, 'cuda_live_word_count;on_change,on_open;;')
         else:
             ed.set_prop(PROP_CORNER_TEXT, "")
-            app_proc(PROC_EVENTS_UNSUB, 'cuda_live_word_count;on_change,on_open;;') 
-
+            app_proc(PROC_EVENTS_UNSUB, 'cuda_live_word_count;on_change,on_open;;')
