@@ -1,2 +1,0 @@
-2026.10.30
-+ adaptation to the theme's colors
